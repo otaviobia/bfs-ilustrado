@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Tiny5&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/ico" href="favicon.ico">
+    <title>Simulação BFS</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 style="margin:0; text-shadow: 3px 3px 0 #000;">Como um zumbi pensa?</h1>
+        <p style="margin:5px 0 0 0; color: #aaa;">Simulação do Algoritmo BFS</p>
+    </header>
+
+    <div id="main-container">   
+        <div id="grid" oncontextmenu="return false;"></div>
+        <div id="sidebar">
+            <div class="controls">
+                <button id="btn-start" onclick="iniciarAnimacao()">▶ Iniciar Busca</button>
+                <button id="btn-clear-walls" onclick="limparParedes()">⛏ Limpar Obstáculos</button>
+                <button id="btn-reset" onclick="resetarGrid()">⚐ Reiniciar Busca</button>
+                
+                <div class="slider-container">
+                    <div class="slider-label">
+                        <span>Delay:</span>
+                        <span id="speed-display" style="color: yellow;">50ms</span>
+                    </div>
+                    <input type="range" id="speed-range" min="0" max="200" step="10" value="50" oninput="updateSpeedLabel()">
+                </div>
+            </div>
+
+            <div id="log-panel">
+                <div class="log-entry">--- CHAT ---</div>
+                <div class="log-entry"><span style="color:#FFFF55">Zumbi</span> entrou no jogo.</div>
+                <div class="log-entry"><span style="color:#FFFF55">Villager</span> entrou no jogo.</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
